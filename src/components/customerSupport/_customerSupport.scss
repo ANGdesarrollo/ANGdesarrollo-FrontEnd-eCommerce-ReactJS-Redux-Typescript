@@ -1,0 +1,168 @@
+@use '../../scss/abstracts/vars' as c;
+@use '../../scss/abstracts/mixins' as m;
+
+.openChat{
+  animation: fade 300ms linear;
+  z-index: 2;
+  position: fixed;
+  right: 10px;
+  background-color: c.$white;
+  border-radius: 50%;
+  padding: .5em;
+  bottom: 3%;
+  cursor: pointer;
+  img {
+    width: 3rem;
+  }
+}
+
+.container-boxChat {
+  animation: fade 300ms linear;
+  background: c.$backgroundLinear;
+  z-index: 2;
+  position: fixed;
+  bottom: 8%;
+  right: 150px;
+  min-height: fit-content;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+
+  form {
+    font-size: .8rem;
+    height: 500px;
+    width: 400px;
+    min-height: fit-content;
+    position: relative;
+
+    .sub-container {
+      position: relative;
+      height: 100%;
+      overflow-y: scroll;
+
+      .header-boxChat {
+        position: sticky;
+        width: 100%;
+        top: 0;
+        padding: .5em 2em;
+        @include m.flex(flex, center, flex-start, null);
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        background-color: c.$lightViolet;
+        color: c.$white;
+
+        div {
+          height: 100%;
+          display: flex;
+          align-items: center;
+
+          h2 {
+            margin: 0 0 0 1rem;
+            font-size: 1rem;
+          }
+        }
+
+        .header-icon {
+          padding: .3em;
+          background-color: c.$white;
+          border-radius: 50%;
+
+          img {
+            width: 1.5rem;
+          }
+        }
+
+      }
+
+      /* Esconder scrollbar */
+      scrollbar-width: none; /* Para navegadores no-Webkit */
+      ::-webkit-scrollbar {
+        width: 0;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      .chatBox {
+
+        padding: .8em 3em 0 0;
+        display: flex;
+        justify-content: flex-end;
+        min-height: 8rem;
+        width: 100%;
+
+        .icon {
+          position: relative;
+          margin-right: .3rem;
+          width: 20%;
+          height: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-end;
+
+          div {
+            z-index: -1;
+            position: absolute;
+            top: -8px;
+            right: 0;
+            background-color: c.$white;
+            border-radius: 50%;
+            padding: .5em;
+
+            img {
+              width: 1.5rem;
+            }
+          }
+        }
+
+        .chat {
+          margin-top: 1rem;
+          width: 80%;
+          padding: 1em 1.5em;
+          font-size: 1rem;
+        }
+      }
+
+    }
+
+    .input-chatBox {
+      padding: .5em .5em 1em .5em;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      background: c.$backgroundLinear;
+      position: sticky;
+      width: 100%;
+      display: flex;
+      bottom: 2%;
+      justify-content: center;
+
+      .subContainer {
+        width: 90%;
+
+        div {
+          width: 100%;
+          position: relative;
+
+          input {
+            border: none;
+            border-radius: 7px;
+            padding: .3em;
+            width: 100%;
+          }
+
+          .send {
+            margin-right: .5rem;
+            cursor: pointer;
+            top: 50%;
+            position: absolute;
+            right: 0;
+            transform: translate(0, -50%)
+          }
+        }
+
+      }
+
+
+    }
+  }
+}

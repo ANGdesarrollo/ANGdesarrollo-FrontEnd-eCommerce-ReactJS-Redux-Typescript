@@ -1,0 +1,165 @@
+@use '../../scss/abstracts/vars' as c;
+@use '../../scss/abstracts/mixins' as m;
+
+main {
+  .container-detailsProduct {
+    display: flex;
+    .left-detail {
+      height: 90vh;
+      background: c.$backgroundLinear;
+      padding: 1em 3em 1em 3em;
+      width: 55%;
+      @include m.flex(flex, center, space-around, column);
+
+      &__image {
+        display: flex;
+        justify-content: center;
+        img {
+          width: 80%;
+        }
+      }
+
+      &__details {
+        width: 80%;
+        margin-top: 1rem;
+        display: flex;
+
+        .left-box {
+          width: 30%;
+          height: 100%;
+
+          div {
+            margin: .5rem 0;
+            border-radius: 7px;
+          }
+
+          .color {
+            height: 50%;
+            padding: .5em;
+            background-color: c.$white;
+            @include m.flex(flex, center, space-around, null);
+
+            p {
+              margin: 0;
+              font-weight: bold;
+              color: c.$violet;
+            }
+
+            span {
+              height: 15px;
+              width: 15px;
+              border: 1px solid c.$lightViolet;
+              border-radius: 50%;
+            }
+
+            .black-circle {
+              background-color: black;
+            }
+
+          }
+
+          .add-product {
+            height: 50%;
+            padding: .5em;
+            background-color: c.$white;
+            @include m.flex(flex, center, space-around, null);
+
+            img {
+              width: 1.5rem;
+              cursor: pointer;
+            }
+
+            span {
+              color: c.$lightViolet;
+              font-size: 1.8rem;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .right-box {
+          margin-left: .5rem;
+          width: 70%;
+          @include m.flex(flex, space-between, center, column);
+
+          .title {
+            margin-left: 2rem;
+            color: c.$darkViolet;
+            font-size: 2rem;
+          }
+
+          .price_cart {
+            width: 100%;
+            @include m.flex(flex, flex-start, space-around, row);
+            .price {
+              @include m.flex(flex, center, center, row);
+              border-radius: 7px;
+              padding: .5em;
+              width: 70%;
+              background-color: c.$darkViolet;
+              span {
+                margin: 0 .5rem;
+              }
+              span:first-child {
+                font-size: 1.5rem;
+                color: c.$gray;
+                text-decoration: line-through;
+              }
+              span:last-child {
+                color: c.$white;
+                font-size: 2.5rem;
+              }
+            }
+          }
+
+          .buy {
+            height: 60%;
+            @include m.flex(flex, center, center, null);
+            img {
+              cursor: pointer;
+              width: 3.5rem;
+            }
+          }
+
+        }
+
+      }
+    }
+
+    .right-detail {
+      padding: 3em 3em 0 3em;
+      background-color: c.$white;
+      width: 45%;
+      @include m.flex(flex, null, space-around, column);
+
+      .description {
+        padding-top: 2em;
+        width: 100%;
+        border-top: 2px solid c.$strongPink;
+      }
+
+      .borderTop {
+        border-top: 2px solid c.$strongPink;
+      }
+      .options {
+        padding-top: 4em;
+        display: flex;
+        div {
+          width: 50%;
+          text-align: center;
+          @include m.flex(flex, center, center, column);
+        }
+        .imageIcon {
+          border-radius: 50%;
+          padding: .7em;
+          width: fit-content;
+          border: 2px solid c.$darkViolet;
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+
+}

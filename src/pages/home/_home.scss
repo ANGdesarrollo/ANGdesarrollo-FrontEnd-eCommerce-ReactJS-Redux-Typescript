@@ -1,0 +1,475 @@
+@use '../../scss/abstracts/vars' as c;
+@use '../../scss/abstracts/mixins' as m;
+
+main {
+  .first {
+    background: c.$backgroundLinear;
+    position: relative;
+    z-index: 1;
+    min-height: 80vh;
+    @include m.grid(12, 0);
+    padding: 2em;
+
+    &__cylinder {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      z-index: -1;
+    }
+
+    &__title {
+      @include m.flex(flex, center, center, null);
+      grid-column: 1 / 7;
+
+      h1 {
+        span {
+          width: fit-content;
+          display: block;
+          color: c.$violet;
+        }
+
+        .first-span {
+          @include m.font(5rem, 900, null);
+        }
+
+        .second-span {
+          @include m.font(4rem, 700, null);
+        }
+
+        .third-span {
+          @include m.font(3rem, 500, null);
+        }
+      }
+    }
+
+    &__cards {
+      grid-column: 7 / 13;
+      @include m.flex(flex, center, center, null);
+
+      .container-card {
+        cursor: pointer;
+        @include m.flex(flex, center, space-between, column);
+        margin: 1rem;
+        width: 250px;
+        height: 100%;
+        text-align: center;
+        padding: 1em;
+        border: 2px solid c.$white;
+        border-radius: 15px;
+
+        div {
+          display: flex;
+        }
+
+        &__image {
+          align-items: center;
+          height: 80%;
+
+          img {
+            width: 8rem;
+          }
+        }
+
+        &__title {
+          height: 20%;
+          display: flex;
+          align-items: flex-start;
+
+          h2 {
+            font-weight: bold;
+            color: c.$violet;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    &__carousel {
+      overflow-x: hidden;
+      padding: 1em;
+      grid-column: 1 / 13;
+      @include m.flex(flex, null, flex-end, null);
+
+      div {
+        max-width: 52rem;
+        width: 100%;
+
+        .carousel-control-prev {
+          margin-top: 4rem;
+          margin-bottom: 4rem;
+        }
+
+        .carousel-control-next {
+          margin-top: 4rem;
+          margin-bottom: 4rem;
+        }
+
+        .carousel-indicators {
+          margin-right: auto;
+          margin-left: auto;
+          margin-bottom: 4rem;
+        }
+      }
+    }
+  }
+
+  .second {
+    overflow: hidden;
+    background-color: #f2f2f2;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &__title {
+      grid-row: 1 / 1;
+      grid-column: 1 / 7;
+      width: 100%;
+
+      h2 {
+        margin-left: .5rem;
+        font-size: 4rem;
+        color: c.$violet;
+      }
+    }
+
+    &__background {
+      grid-row: 1/2;
+      grid-column: 10 / 13;
+      width: 100%;
+      display: flex;
+      position: relative;
+      justify-content: flex-end;
+      img {
+        position: absolute;
+        right: -30%;
+        bottom: -15%;
+        width: 40rem;
+      }
+    }
+
+    &__products {
+      grid-row: 1 / 2;
+      grid-column: 1 / 6;
+      min-width: fit-content;
+      width: 40%;
+      display: flex;
+
+      div {
+        img {
+          width: 100%;
+        }
+        padding: 1em;
+      }
+    }
+
+    &__button {
+      grid-row: 1 / 2;
+      grid-column: 6 / 10;
+      min-width: fit-content;
+      width: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        width: 300px;
+        padding: .5em;
+        font-size: 1.5rem;
+        color: c.$white;
+        background-color: c.$darkViolet;
+      }
+    }
+  }
+
+  .third {
+    height: 90vh;
+    display: flex;
+    &__product {
+      position: relative;
+      background: c.$backgroundLinear;
+      width: 50%;
+      height: 100%;
+      @include m.flex(flex, center, center, column);
+        .carousel {
+          .carousel-inner {
+            .carousel-item {
+              div {
+                @include m.flex(flex, center, center, column);
+                img {
+                  width: 35%;
+                }
+                h2 {
+                  color: c.$darkViolet;
+                }
+                button {
+                  width: 30%;
+                  background-color: c.$darkViolet;
+                  span {
+                    font-weight: bold;
+                    padding: .5em;
+                    color: white;
+                    font-size: 1.7rem;
+                  }
+                  span:first-child {
+                    color: #9EAAAD;
+                    text-decoration: line-through;
+                    font-size: 1rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+    }
+
+    &__description {
+      overflow: hidden;
+      width: 50%;
+      .geometry-image {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        height: 80%;
+        img {
+          bottom: 1rem;
+          right: -25%;
+          position: absolute;
+          max-width: 50rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .fourth {
+    height: 90vh;
+    display: flex;
+    &__product {
+      position: relative;
+      order: 1;
+      background: c.$backgroundLinear;
+      width: 50%;
+      height: 100%;
+      @include m.flex(flex, center, center, column);
+      .carousel {
+        .carousel-inner {
+          .carousel-item {
+            div {
+              @include m.flex(flex, center, center, column);
+              img {
+                width: 35%;
+              }
+              h2 {
+                color: c.$darkViolet;
+              }
+              button {
+                width: 30%;
+                background-color: c.$darkViolet;
+                span {
+                  font-weight: bold;
+                  padding: .5em;
+                  color: white;
+                  font-size: 1.7rem;
+                }
+                span:first-child {
+                  color: #9EAAAD;
+                  text-decoration: line-through;
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      width: 50%;
+      .geometry-image {
+        order: 1;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        height: 100%;
+        img {
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          max-width: 30rem;
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  main {
+    .second {
+      &__title {
+        h2 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  main {
+    .first {
+      &__cylinder {
+        img {
+          width: 40rem;
+        }
+      }
+
+      &__title {
+        @include m.flex(flex, center, center, null);
+        grid-column: 1 / 7;
+
+        h1 {
+          .first-span {
+            @include m.font(4rem, 900, null);
+          }
+
+          .second-span {
+            @include m.font(3rem, 700, null);
+          }
+
+          .third-span {
+            @include m.font(2rem, 500, null);
+          }
+        }
+      }
+    }
+
+    .second {
+      &__title {
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+
+      &__background {
+        img {
+          width: 30rem;
+        }
+      }
+
+      &__button {
+        button {
+          width: 250px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  main {
+    .first {
+      min-height: 80vh;
+      padding: 2em;
+
+      &__cylinder {
+      }
+
+      &__title {
+        grid-column: 1 / 13;
+      }
+
+      &__cards {
+        grid-column: 1 / 13;
+        .container-card {
+          background-color: rgba(242, 242, 242, 0.5);
+        }
+      }
+    }
+
+    .second {
+      grid-template-columns: repeat(12, 1fr);
+
+      &__title {
+        z-index: 1;
+        grid-column: 1 / 13;
+        width: 100%;
+
+        h2 {
+          margin-left: .5rem;
+          font-size: 3rem;
+          color: c.$violet;
+        }
+      }
+
+      &__background {
+        grid-row: inherit;
+        grid-column: 1 / 13;
+        img {
+          width: 40rem;
+        }
+      }
+
+      &__products {
+        z-index: 1;
+        grid-row: inherit;
+        grid-column: 1 / 13;
+        width: 100%;
+        justify-content: center;
+      }
+
+      &__button {
+        margin: 1rem;
+        grid-column: 1 / 13;
+        grid-row: inherit;
+        width: 100%;
+        button {
+          width: 300px;
+        }
+      }
+    }
+
+    .third {
+      height: 40vh;
+      &__product {
+        .carousel {
+          .carousel-inner {
+            .carousel-item {
+              div {
+                img {
+                  width: 80%;
+                }
+                button {
+                  width: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .fourth {
+      height: 40vh;
+      &__product {
+        .carousel {
+          .carousel-inner {
+            .carousel-item {
+              div {
+                img {
+                  width: 80%;
+                }
+                button {
+                  width: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

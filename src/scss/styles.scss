@@ -1,0 +1,14 @@
+// BASE
+@use './base/base';
+// UI - NAVBAR
+@use 'src/components/navbar/navbar';
+@use '../components/footer/footer';
+@use '../components/loginRegister/LoginRegister.scss';
+@use '../components/customerSupport/customerSupport';
+// Pages
+@use 'src/pages/home/home';
+@use 'src/pages/contact/contact';
+@use 'src/pages/returnPolicy/returnPolicy';
+@use 'src/pages/products/products';
+@use 'src/pages/detailProducts/detailProducts';
+@use 'src/pages/cart/cart';

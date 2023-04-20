@@ -1,0 +1,55 @@
+@use '../../scss/abstracts/vars' as c;
+
+main {
+  .return-policy {
+    background: c.$backgroundLinear;
+    .title-return-policy {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid c.$darkViolet;
+
+      h1 {
+        color: c.$darkViolet;
+        font-family: 'Cairo', sans-serif;
+        font-size: 3em;
+        font-weight: bold;
+      }
+    }
+
+    .description-return-policy {
+      font-family: 'Cairo', sans-serif;
+      flex-direction: column;
+      display: flex;
+      width: 40%;
+      font-size: 1.2em;
+      margin: 2%;
+
+      li {
+        padding: 1% 0 1% 2%;
+        font-style: italic;
+      }
+
+      p {
+        line-height: 150%;
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 769px) {
+
+  .title-return-policy {
+    h1 {
+      font-size: 2em;
+    }
+  }
+  .description-return-policy {
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1em;
+  }
+}

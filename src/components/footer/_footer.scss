@@ -1,0 +1,61 @@
+@use 'src/scss/abstracts/vars' as c;
+@use 'src/scss/abstracts/mixins' as m;
+
+.footer {
+  position: relative;
+  height: 30vh;
+  padding: 1em;
+  &__title {
+    display: flex;
+    align-items: center;
+    h2 {
+      color: c.$darkViolet;
+    }
+    img {
+      margin-left: 1rem;
+    }
+  }
+
+  &__contact {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 0 30%;
+    img {
+      cursor: pointer;
+      width: 5rem;
+    }
+  }
+
+  &__geometry {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 0;
+    img {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer {
+    position: relative;
+    height: 20vh;
+
+    &__contact {
+      padding: 0 20%;
+      img {
+        width: 4rem;
+      }
+    }
+
+    &__geometry {
+      z-index: -1;
+    }
+  }
+}
