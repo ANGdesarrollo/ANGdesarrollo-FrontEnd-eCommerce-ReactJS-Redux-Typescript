@@ -3,7 +3,7 @@
 // UI - NAVBAR
 @use 'src/components/navbar/navbar';
 @use '../components/footer/footer';
-@use '../components/loginRegister/loginRegister.scss';
+@use '../components/loginRegister/loginRegister';
 @use '../components/customerSupport/customerSupport';
 // Pages
 @use 'src/pages/home/home';
