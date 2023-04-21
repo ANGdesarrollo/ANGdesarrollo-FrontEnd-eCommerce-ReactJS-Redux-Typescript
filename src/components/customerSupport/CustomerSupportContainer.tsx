@@ -14,6 +14,18 @@ export const CustomerSupportContainer = () => {
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     useEffect(() => {
+        if (!username && !isLogged) setIsOpen(false);
+    }, [username, isLogged]);
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
         const container = containerRef.current;
         if (container) container.scrollTop = container.scrollHeight;
     }, [allMessages]);
@@ -49,6 +61,7 @@ export const CustomerSupportContainer = () => {
             sendMessageInput={sendMessageInput}
             handleChat={handleChat}
             isOpen={isOpen}
+            username={username}
         />
     );
 };

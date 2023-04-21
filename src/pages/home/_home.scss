@@ -172,6 +172,8 @@ main {
       align-items: center;
       justify-content: center;
       button {
+        border: none;
+        border-radius: 7px;
         width: 300px;
         padding: .5em;
         font-size: 1.5rem;
@@ -202,6 +204,8 @@ main {
                   color: c.$darkViolet;
                 }
                 button {
+                  border: none;
+                  border-radius: 7px;
                   width: 30%;
                   background-color: c.$darkViolet;
                   span {
@@ -263,6 +267,8 @@ main {
                 color: c.$darkViolet;
               }
               button {
+                border: none;
+                border-radius: 7px;
                 width: 30%;
                 background-color: c.$darkViolet;
                 span {

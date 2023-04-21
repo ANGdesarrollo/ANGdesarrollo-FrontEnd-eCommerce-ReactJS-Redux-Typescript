@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useImages } from '../../hooks/useImages';
 import { IChat } from '../../interfaces/interfaceChat';
 
-const { smiling, chatContainer, mandoicon, customerSupport, close } = useImages();
+const { smiling, chatContainer, mandoicon, customerSupport, close, userChat } = useImages();
 
 interface Props {
     sendMessageInput: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -11,6 +11,7 @@ interface Props {
     inputRef: React.MutableRefObject<HTMLInputElement | null>;
     handleChat: () => void;
     isOpen: boolean;
+    username: string | null;
 }
 
 export const CustomerSupportLayout = ({
@@ -20,6 +21,7 @@ export const CustomerSupportLayout = ({
     inputRef,
     isOpen,
     handleChat,
+    username,
 }: Props) => {
     const openCloseImage = isOpen ? close : customerSupport;
     return (
@@ -56,7 +58,11 @@ export const CustomerSupportLayout = ({
                                         <div className="chatBox" key={el._id}>
                                             <div className="icon">
                                                 <div>
-                                                    <img src={mandoicon} alt="admin" />
+                                                    {el.username !== username ? (
+                                                        <img src={mandoicon} alt="admin" />
+                                                    ) : (
+                                                        <img src={userChat} alt="admin" />
+                                                    )}
                                                 </div>
                                             </div>
                                             <div className="chat" style={{ backgroundImage: `url(${chatContainer})` }}>

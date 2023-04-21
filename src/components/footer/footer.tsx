@@ -8,6 +8,7 @@ const {
     locationIcon,
     mandoicon,
     triangle_1,
+    doubleGeometry_footer
 } = useImages();
 
 export const Footer = () => {
@@ -28,6 +29,9 @@ export const Footer = () => {
             </div>
             <div className="footer__geometry">
                 <img src={triangle_1} alt="triangle" />
+            </div>
+            <div className="footer__double_geometry">
+                <img src={doubleGeometry_footer} alt="triangle" />
             </div>
         </footer>
     );

@@ -28,7 +28,8 @@ import truck from '../assets/icons/camion.png';
 import exchange from '../assets/icons/intercambiar.png';
 import store from '../assets/icons/tienda.png';
 import creditCard from '../assets/icons/tarjeta-de-credito.png';
-
+import userChat from '../assets/icons/usuario.png';
+import doubleGeometry_footer from '../assets/images/cube_cone_footer.png';
 export const useImages = () => {
     return {
         menuIcon,
@@ -61,5 +62,7 @@ export const useImages = () => {
         exchange,
         store,
         creditCard,
+        userChat,
+        doubleGeometry_footer
     };
 };
