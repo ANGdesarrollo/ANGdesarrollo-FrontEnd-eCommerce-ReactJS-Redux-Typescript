@@ -38,6 +38,9 @@
       width: 0;
       background: transparent;
     }
+    .sub-container::-webkit-scrollbar {
+      display: none;
+    }
     ::-webkit-scrollbar {
       width: 0;  /* ancho cero */
       background: transparent;  /* fondo transparente */
