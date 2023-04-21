@@ -34,10 +34,23 @@
     min-height: fit-content;
     position: relative;
 
+    .sub-container::webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+    ::-webkit-scrollbar {
+      width: 0;  /* ancho cero */
+      background: transparent;  /* fondo transparente */
+    }
     .sub-container {
       position: relative;
       height: 100%;
       overflow-y: scroll;
+
+      /* Esconder scrollbar */
+
+      scrollbar-width: none;
+
 
       .header-boxChat {
         position: sticky;
@@ -73,15 +86,6 @@
 
       }
 
-      /* Esconder scrollbar */
-      scrollbar-width: none; /* Para navegadores no-Webkit */
-      ::-webkit-scrollbar {
-        width: 0;
-      }
-
-      ::-webkit-scrollbar-track {
-        background-color: transparent;
-      }
 
       .chatBox {
 

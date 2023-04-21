@@ -13,7 +13,6 @@ export const Card = ({ image, title, _id, category }: props) => {
     return (
         <div
             onClick={() => {
-                console.log('me clikearon');
                 navigate(`/products/${category}/${_id}`);
             }}
             className="container-card">

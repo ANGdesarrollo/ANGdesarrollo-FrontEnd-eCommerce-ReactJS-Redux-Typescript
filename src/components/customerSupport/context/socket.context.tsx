@@ -26,7 +26,6 @@ export const SocketsProvider = ({ children }: Props) => {
     const [allMessages, setAllMessages] = useState<IChat | undefined>();
     const { username, isLogged } = useAppSelector((state) => state.user);
     const sendMessage = (message: IMessageUser): void => {
-        console.log('entre');
         socket.emit('client_message', message);
     };
 
@@ -52,10 +51,6 @@ export const SocketsProvider = ({ children }: Props) => {
         if (username) {
             setAllMessages(messages);
         }
-    });
-
-    socket.on('server_chat', (message: IChat) => {
-        setAllMessages(message);
     });
 
     useEffect(() => {
