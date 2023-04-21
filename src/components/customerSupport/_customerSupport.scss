@@ -1,7 +1,7 @@
 @use '../../scss/abstracts/vars' as c;
 @use '../../scss/abstracts/mixins' as m;
 
-.openChat{
+.openChat {
   animation: fade 300ms linear;
   z-index: 2;
   position: fixed;
@@ -11,6 +11,7 @@
   padding: .5em;
   bottom: 3%;
   cursor: pointer;
+
   img {
     width: 3rem;
   }
@@ -38,13 +39,16 @@
       width: 0;
       background: transparent;
     }
+
     .sub-container::-webkit-scrollbar {
       display: none;
     }
+
     ::-webkit-scrollbar {
-      width: 0;  /* ancho cero */
-      background: transparent;  /* fondo transparente */
+      width: 0; /* ancho cero */
+      background: transparent; /* fondo transparente */
     }
+
     .sub-container {
       position: relative;
       height: 100%;
@@ -174,5 +178,71 @@
 }
 
 @media screen and (max-width: 1400px) {
+  .openChat {
+    img {
+      width: 2rem;
+    }
+  }
 
+  .container-boxChat {
+    bottom: 8%;
+    right: 100px;
+
+    form {
+      font-size: .8rem;
+      height: 400px;
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .openChat {
+    img {
+      width: 3rem;
+    }
+  }
+
+  .container-boxChat {
+    bottom: 8%;
+    right: 100px;
+
+    form {
+      font-size: .8rem;
+      height: 500px;
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .openChat {
+    img {
+      width: 2rem;
+    }
+  }
+
+  .container-boxChat {
+    bottom: 125px;
+    right: 10px;
+
+    form {
+      font-size: .8rem;
+      height: 400px;
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container-boxChat {
+    bottom: 125px;
+    right: 10px;
+
+    form {
+      font-size: .8rem;
+      height: 350px;
+      width: 250px;
+    }
+  }
 }

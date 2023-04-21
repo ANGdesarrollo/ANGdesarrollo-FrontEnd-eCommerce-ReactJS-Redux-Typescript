@@ -16,11 +16,11 @@ export const FilterInputs = ({ selectedOption, handleOptionChange }: Props) => {
 
     return (
         <>
-            <div>
+            <div className="order-by">
                 <h2>ORDER BY</h2>
             </div>
             {radioOptions.map((option) => (
-                <div key={option.id}>
+                <div className="filter-inputs" key={option.id}>
                     <label htmlFor={option.id}>{option.label}</label>
                     <input
                         id={option.id}

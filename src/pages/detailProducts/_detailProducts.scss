@@ -3,9 +3,10 @@
 
 main {
   .container-detailsProduct {
+    min-height: fit-content;
     display: flex;
     .left-detail {
-      height: 90vh;
+      min-height: 90vh;
       background: c.$backgroundLinear;
       padding: 1em 3em 1em 3em;
       width: 55%;
@@ -127,6 +128,7 @@ main {
     }
 
     .right-detail {
+      min-height: 90vh;
       padding: 3em 3em 0 3em;
       background-color: c.$white;
       width: 45%;
@@ -161,5 +163,78 @@ main {
       }
     }
   }
+}
 
+@media screen and (max-width: 1400px) {
+  main {
+    .container-detailsProduct {
+      .left-detail {
+        padding: 2em 0 8em 0;
+
+        &__image {
+          img {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  main {
+    .container-detailsProduct {
+      flex-wrap: wrap;
+      .left-detail {
+        min-height: 50vh;
+        width: 100%;
+      }
+
+      .right-detail {
+        min-height: 50vh;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main {
+    .container-detailsProduct {
+      .left-detail {
+        min-height: fit-content;
+        &__details {
+          width: 100%;
+          padding: 0;
+          height: 100%;
+          flex-wrap: wrap;
+          .left-box {
+            height: 50%;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+
+            .color {
+              padding: 0;
+              width: 40%;
+            }
+
+            .add-product {
+              width: 40%;
+            }
+          }
+
+          .right-box {
+            width: 100%;
+          }
+        }
+      }
+
+      .right-detail {
+        min-height: 40vh;
+        width: 100%;
+        padding: 1.5em;
+      }
+    }
+  }
 }

@@ -3,6 +3,7 @@ import { ContactLayout } from './ContactLayout';
 import { useForm } from 'react-hook-form';
 import { IEmail } from '../../interfaces/interfaceEmail';
 import { axiosApi } from '../../config/axios';
+import { swalAlert } from '../../config/swal';
 
 export const ContactContainer = () => {
     const [manageState, setManageState] = useState({
@@ -12,6 +13,7 @@ export const ContactContainer = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm<IEmail>();
 
@@ -29,6 +31,8 @@ export const ContactContainer = () => {
                     onError: false,
                     onLoading: false,
                 });
+                reset();
+                swalAlert({ message: 'Your message has benn sent !' });
             })
             .catch(() => {
                 setManageState({

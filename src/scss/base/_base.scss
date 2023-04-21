@@ -15,6 +15,10 @@ body {
   min-height: 100vh;
   font-family: 'Cairo', sans-serif;
 
+  input {
+    outline: none;
+  }
+
   main {
     animation: fade 300ms linear;
   }

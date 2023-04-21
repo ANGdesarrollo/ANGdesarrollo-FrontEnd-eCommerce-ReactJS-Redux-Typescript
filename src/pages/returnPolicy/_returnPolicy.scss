@@ -40,16 +40,22 @@ main {
 
 
 @media screen and (max-width: 769px) {
+  main {
+    .return-policy {
+      padding-top: 2em;
+      .title-return-policy {
+        h1 {
+          font-size: 2rem;
+        }
+      }
 
-  .title-return-policy {
-    h1 {
-      font-size: 2em;
+      .description-return-policy {
+        text-align: center;
+        width: 100%;
+        padding: 1em;
+        font-size: 1rem;
+        margin: inherit;
+      }
     }
-  }
-  .description-return-policy {
-    margin: 0;
-    padding: 1rem;
-    width: 100%;
-    font-size: 1em;
   }
 }
