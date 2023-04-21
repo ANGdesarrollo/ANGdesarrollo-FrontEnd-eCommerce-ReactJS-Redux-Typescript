@@ -45,7 +45,7 @@ export const SocketsProvider = ({ children }: Props) => {
                 setAllMessages(messages);
             });
         }
-    }, [username, isLogged]);
+    }, [username, isLogged, allMessages]);
 
     socket.on(`${allMessages?._id}`, (messages: IChat) => {
         if (username) {

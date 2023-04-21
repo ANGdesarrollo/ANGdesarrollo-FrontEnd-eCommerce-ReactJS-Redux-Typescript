@@ -91,7 +91,7 @@ main {
 
           .price_cart {
             width: 100%;
-            @include m.flex(flex, flex-start, space-around, row);
+            @include m.flex(flex, center, space-around, row);
             .price {
               @include m.flex(flex, center, center, row);
               border-radius: 7px;

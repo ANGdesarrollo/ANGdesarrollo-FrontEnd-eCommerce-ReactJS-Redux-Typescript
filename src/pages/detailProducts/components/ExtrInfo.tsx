@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useImages } from '../../../hooks/useImages';
+import React from 'react';
+import {useImages} from "../../../hooks/useImages";
+
+const { creditCard, truck, exchange, store } = useImages();
 
 interface Props {
     details: string;
 }
-
-const { creditCard, truck, exchange, store } = useImages();
 
 export const ExtrInfo = ({ details }: Props) => {
     return (

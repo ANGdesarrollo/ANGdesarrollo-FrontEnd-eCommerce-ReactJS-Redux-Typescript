@@ -3,6 +3,7 @@ import { IProduct } from '../../interfaces/interfaceProduct';
 import { useImages } from '../../hooks/useImages';
 import { getPriceWithDiscount } from '../../hooks/useDiscount';
 import { ExtrInfo } from './components/ExtrInfo';
+import {useNavigate} from "react-router-dom";
 
 interface Props {
     productDetail: IProduct | undefined;
@@ -15,6 +16,7 @@ interface Props {
 const { add, minus, cartCard } = useImages();
 
 export const DetailProductLayout = ({ productDetail, qty, handleMinusQty, handleAddQty, addProductToCart }: Props) => {
+    const navigate = useNavigate();
     if (productDetail) {
         const {
             details,

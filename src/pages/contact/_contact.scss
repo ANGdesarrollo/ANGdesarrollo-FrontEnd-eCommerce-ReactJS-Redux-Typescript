@@ -3,9 +3,7 @@
 
 .main {
   height: 85vh;
-  background-image: url(https://res.cloudinary.com/dwz16rstr/image/upload/v1663635945/react-js-game-on/contact/background_ftoh16.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: c.$backgroundLinear;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -18,7 +16,7 @@
     display: grid;
     width: 47%;
     height: fit-content;
-    background-color: c.$lightViolet;
+    background-color: rgba(106, 133, 202, 0.2);
 
     &__icons {
       grid-column: 1 / 2;
@@ -42,16 +40,19 @@
     }
 
     &__form-part {
-      background-color: c.$lightViolet;
+      border-radius: 7px;
+      background-color: c.$white;
       grid-column: 2 / 8;
       grid-template-columns: repeat(7, 1fr);
       grid-template-rows: 2rem auto;
       display: grid;
 
       .points-form {
+        border-top-right-radius: 7px;
+        border-top-left-radius: 7px;
         display: flex;
         align-items: center;
-        background-color: c.$strongPink;
+        background-color: c.$lightViolet;
         padding-left: 1.5rem;
         grid-column: 1 / 8;
 
@@ -93,6 +94,7 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+        color: c.$darkViolet;
         span {
           display: block;
         }
@@ -106,7 +108,7 @@
           position: absolute;
           content: "";
           padding: 5px;
-          background-color: c.$lightBlue;
+          background-color: c.$lightViolet;
           bottom: -0.5rem;
           width: 100%;
         }
@@ -129,6 +131,9 @@
             font-size: 0.8rem;
             width: 100%;
             @include m.flex(flex, flex-start, center, column);
+            label {
+              color: c.$darkViolet;
+            }
             input {
               width: 80%;
               padding: 10px 0;
@@ -142,12 +147,12 @@
             }
 
             input:focus {
-              border-bottom-color: c.$white;
+              border-bottom-color: c.$darkViolet;
             }
 
             ::placeholder {
               border: none;
-              color: c.$strongPink;
+              color: c.$darkViolet;
             }
           }
 
@@ -158,17 +163,20 @@
             justify-content: flex-end;
 
             .app-form-button {
+              padding: .5em;
+              border-radius: 7px;
               margin: 10px;
               background: none;
               border: none;
-              color: c.$lightBlue;
+              color: c.$darkViolet;
               font-size: 14px;
               cursor: pointer;
               outline: none;
             }
 
             .app-form-button:hover {
-              color: c.$pink;
+              background-color: c.$darkViolet;
+              color: c.$white;
             }
           }
         }
@@ -275,7 +283,6 @@
 // SUCCESS
 
 .success-container {
-  font-family: 'Cairo', sans-serif;
   margin: 5%;
   height: 100vh;
   display: flex;
