@@ -41,8 +41,8 @@ export const CartContainer = () => {
     const subTotalToPay = (): number => {
         let subTotal = 0;
         dataCart.map((el) => {
-            if (el.discount === 0) subTotal += el.price;
-            if (el.discount !== 0) subTotal += getPriceWithDiscount(el.price, el.discount);
+            if (el.discount === 0 && el.qty) subTotal += el.price * el.qty;
+            if (el.discount !== 0 && el.qty) subTotal += getPriceWithDiscount(el.price, el.discount) * el.qty;
         });
         return subTotal;
     };

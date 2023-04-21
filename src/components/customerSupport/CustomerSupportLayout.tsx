@@ -76,7 +76,9 @@ export const CustomerSupportLayout = ({
                             <div className="subContainer">
                                 <div>
                                     <input ref={inputRef} type="text" />
-                                    <img className="send" src={smiling} alt="send" />
+                                    <button type="submit">
+                                        <img src={smiling} alt="send" />
+                                    </button>
                                 </div>
                             </div>
                         </div>

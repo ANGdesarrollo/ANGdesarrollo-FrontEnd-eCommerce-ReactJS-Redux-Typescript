@@ -157,19 +157,22 @@
             width: 100%;
           }
 
-          .send {
+          button {
+            border: none;
+            background: transparent;
             margin-right: .5rem;
             cursor: pointer;
             top: 50%;
             position: absolute;
             right: 0;
-            transform: translate(0, -50%)
+            transform: translate(0, -50%);
           }
         }
-
       }
-
-
     }
   }
+}
+
+@media screen and (max-width: 1400px) {
+
 }
