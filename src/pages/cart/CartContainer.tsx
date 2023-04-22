@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { swalAlert } from '../../config/swal';
 import { IOrder } from '../../interfaces/interfaceOrder';
 import { onSendOrder } from '../../store/slices/cart/thunk';
+import { EmptyCart } from './components/EmptyCart';
 
 export const CartContainer = () => {
     const [dataCart, setDataCart] = useState<IProduct[]>([]);
@@ -62,5 +63,9 @@ export const CartContainer = () => {
         }
     };
 
-    return <CartLayout dataCart={dataCart} subTotalToPay={subTotalToPay} confirmOrder={confirmOrder} />;
+    return cart.length < 1 ? (
+        <EmptyCart />
+    ) : (
+        <CartLayout dataCart={dataCart} subTotalToPay={subTotalToPay} confirmOrder={confirmOrder} />
+    );
 };

@@ -25,11 +25,13 @@ main {
       margin: 2%;
 
       li {
+        color: c.$darkViolet;
         padding: 1% 0 1% 2%;
         font-style: italic;
       }
 
       p {
+        color: c.$darkViolet;
         line-height: 150%;
       }
     }

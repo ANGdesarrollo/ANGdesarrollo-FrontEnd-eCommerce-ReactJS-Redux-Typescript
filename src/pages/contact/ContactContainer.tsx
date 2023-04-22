@@ -35,6 +35,7 @@ export const ContactContainer = () => {
                 swalAlert({ message: 'Your message has benn sent !' });
             })
             .catch(() => {
+                swalAlert({ message: 'There was an error, try again later' });
                 setManageState({
                     onLoading: false,
                     onError: true,

@@ -1,5 +1,6 @@
 import React from 'react';
-import {useImages} from "../../../hooks/useImages";
+import { useImages } from '../../../hooks/useImages';
+import { useNavigate } from 'react-router-dom';
 
 const { creditCard, truck, exchange, store } = useImages();
 
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export const ExtrInfo = ({ details }: Props) => {
+    const navigate = useNavigate();
     return (
         <>
             <div className="description">
@@ -17,7 +19,7 @@ export const ExtrInfo = ({ details }: Props) => {
                 <div className="options borderTop">
                     <div>
                         <div className="imageIcon">
-                            <img src={creditCard} alt="credit" />
+                            <img onClick={() => navigate('returnPolicy')} src={creditCard} alt="credit" />
                         </div>
                         <p>
                             FEES & FORMS OF PAYMENT <span>view more &gt;</span>
@@ -25,7 +27,7 @@ export const ExtrInfo = ({ details }: Props) => {
                     </div>
                     <div>
                         <div className="imageIcon">
-                            <img src={truck} alt="shipment" />
+                            <img onClick={() => navigate('returnPolicy')} src={truck} alt="shipment" />
                         </div>
                         <p>
                             SHIPPING TIME & COST <span>view more &gt;</span>
@@ -36,7 +38,7 @@ export const ExtrInfo = ({ details }: Props) => {
                     <div>
                         <div>
                             <div className="imageIcon">
-                                <img src={exchange} alt="return-policy" />
+                                <img onClick={() => navigate('returnPolicy')} src={exchange} alt="return-policy" />
                             </div>
                         </div>
                         <p>
@@ -45,7 +47,7 @@ export const ExtrInfo = ({ details }: Props) => {
                     </div>
                     <div>
                         <div className="imageIcon">
-                            <img src={store} alt="store" />
+                            <img onClick={() => navigate('returnPolicy')} src={store} alt="store" />
                         </div>
                         <p>
                             WITHDRAWAL IN BRANCHES <span>view more &gt;</span>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IProduct } from '../../interfaces/interfaceProduct';
-import { useAppDispatch } from '../../hooks/useRedux';
+import {useAppDispatch, useAppSelector} from '../../hooks/useRedux';
 import { deleteProduct, emptyCart } from '../../store/slices/cart/cartSlice';
 import { getPriceWithDiscount } from '../../hooks/useDiscount';
 
@@ -12,6 +12,7 @@ interface Props {
 
 export const CartLayout = ({ dataCart, subTotalToPay, confirmOrder }: Props) => {
     const dispatch = useAppDispatch();
+    const { onLoading } = useAppSelector(state => state.cart);
     return (
         <main>
             <div className="cart-product-container">
@@ -77,6 +78,7 @@ export const CartLayout = ({ dataCart, subTotalToPay, confirmOrder }: Props) => 
                             </button>
                             <div>
                                 <button
+                                    disabled={onLoading}
                                     onClick={() => dispatch(emptyCart())}
                                     className="css-button-shadow-border-sliding--rose">
                                     EMPTY CART

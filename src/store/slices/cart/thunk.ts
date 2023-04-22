@@ -18,6 +18,7 @@ export const onSendOrder =
             .then(() => {
                 dispatch(onLoading(false));
                 dispatch(sendOrder());
+                swalAlert({ message: 'Your order has been successfully sent' });
             })
             .catch(() => {
                 swalAlert({ message: 'There was an error, please try again' });

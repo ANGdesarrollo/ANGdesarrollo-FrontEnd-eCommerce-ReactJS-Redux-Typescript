@@ -119,7 +119,6 @@ export const ContactLayout = ({ errors, register, handleSubmit, onSubmit, manage
                                 ) : (
                                     <Orbit size={35} color="#231F20" />
                                 )}
-                                {manageState.onError && <p>There was an error, please try again</p>}
                             </div>
                         </div>
                     </form>
