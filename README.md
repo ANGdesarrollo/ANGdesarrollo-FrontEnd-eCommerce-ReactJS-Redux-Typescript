@@ -36,8 +36,10 @@ MODE=ENVIROMENT
 
 ##  💡 Key Features:
 
+
 #### 🔥 Redux implementation for session and product state management.
 #### 💬 Chat setup with Socket IO, enabling direct communication with backend for live support chats.
+#### 🚀 Product filtering on the homepage based on best-selling products and discounts pulled from the backend.
 #### 📧 Contact form implementation using Nodemailer on the backend.
 #### 📨 Order confirmation emails to the user using Nodemailer on the backend.
 #### 🌐 Context management using useContext for Socket IO chat state management.
