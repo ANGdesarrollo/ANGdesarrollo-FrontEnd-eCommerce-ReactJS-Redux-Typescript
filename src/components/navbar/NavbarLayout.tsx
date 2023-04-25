@@ -16,7 +16,7 @@ interface props {
     closeMenu: () => void;
 }
 
-const { menuIcon, userIcon, cartIcon, logout } = useImages();
+const { menuIcon, userIcon, cartIcon, logout, logo } = useImages();
 
 export const NavbarLayout = ({ handleMenu, handleSubMenu, conditionalClasses, activateMenu, closeMenu }: props) => {
     const dispatch = useAppDispatch();
@@ -27,7 +27,7 @@ export const NavbarLayout = ({ handleMenu, handleSubMenu, conditionalClasses, ac
     return (
         <header className="header">
             <div className="header__logo">
-                <img src="src/components/navbar/NavbarLayout" alt="Logo" />
+                <img src={logo} alt="Logo" />
             </div>
             <nav className="header__first-nav">
                 <ul className={`${firstPage} && ${conditionalClasses()}`}>

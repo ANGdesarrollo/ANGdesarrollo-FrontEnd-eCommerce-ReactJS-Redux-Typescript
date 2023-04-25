@@ -30,6 +30,7 @@ import store from '../assets/icons/tienda.png';
 import creditCard from '../assets/icons/tarjeta-de-credito.png';
 import userChat from '../assets/icons/usuario.png';
 import doubleGeometry_footer from '../assets/images/cube_cone_footer.png';
+import logo from '../assets/logo/logo.png';
 export const useImages = () => {
     return {
         menuIcon,
@@ -63,6 +64,7 @@ export const useImages = () => {
         store,
         creditCard,
         userChat,
-        doubleGeometry_footer
+        doubleGeometry_footer,
+        logo,
     };
 };
