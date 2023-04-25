@@ -131,6 +131,7 @@
     }
 
     &__logo {
+      min-width: 5rem;
       padding: .5em;
       grid-column: 1 / 3;
     }
